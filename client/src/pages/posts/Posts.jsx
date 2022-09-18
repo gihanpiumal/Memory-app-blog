@@ -9,6 +9,7 @@ const Posts = () => {
     <div className='posts'>
         <Post/>
         <Post/>
+        <Post/>
     </div>
   )
 }

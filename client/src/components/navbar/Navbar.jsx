@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="wrapper">
-        <div className="logo">LOGO</div>
+        <div className="logo">Memory-BLOG</div>
         <div className="search">
           <input type={"text"} placeholder="Search..." />
           <SearchIcon />

@@ -10,11 +10,15 @@ import "./home.scss";
 const Home = () => {
   return (
     <div className="container">
-      <Navbar />
+      <div className="navbar">
+        <Navbar />
+      </div>
       <div className="home">
-        <Sidebar />
+        <div className="sidebar">
+          <Sidebar />
+        </div>
         <div className="homeContainer">
-          <Posts/>
+          <Posts />
         </div>
         <div className="sideContainer">
           <SideContainer />

@@ -1,11 +1,14 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import "./sideContainer.scss";
 
 const SideContainer = () => {
-    const [showTruncate, setShowTruncate] = useState(true);
+  const [showTruncate, setShowTruncate] = useState(true);
 
   return (
     <div className="sideContainer">
@@ -59,17 +62,42 @@ const SideContainer = () => {
         <div className="bottom">
           <div className="bottomTitle">Latest Notifications</div>
           <div className="notifiactions">
-            <p className="msg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-              cupiditate quae veniam molestiae consequatur...
-            </p>
-            <p className="msg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-              cupiditate quae veniam molestiae consequatur...
-            </p><p className="msg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-              cupiditate quae veniam molestiae consequatur...
-            </p>
+            <div className="note">
+              <p className="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+                cupiditate quae veniam molestiae consequatur...
+              </p>
+              <div className="noteBtn">
+                <Button color="secondary">Dismis</Button>
+                <IconButton aria-label="settings">
+                  <MoreVertIcon style={{ color: "black" }} />
+                </IconButton>
+              </div>
+            </div>
+            <div className="note">
+              <p className="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+                cupiditate quae veniam molestiae consequatur...
+              </p>
+              <div className="noteBtn">
+                <Button color="secondary">Dismis</Button>
+                <IconButton aria-label="settings">
+                  <MoreVertIcon style={{ color: "black" }} />
+                </IconButton>
+              </div>
+            </div>
+            <div className="note">
+              <p className="msg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+                cupiditate quae veniam molestiae consequatur...
+              </p>
+              <div className="noteBtn">
+                <Button color="secondary">Dismis</Button>
+                <IconButton aria-label="settings">
+                  <MoreVertIcon style={{ color: "black" }} />
+                </IconButton>
+              </div>
+            </div>
           </div>
         </div>
       </div>
