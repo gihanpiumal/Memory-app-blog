@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Joi, { object } from "joi";
+import { useSelector, useDispatch } from "react-redux";
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -8,6 +10,29 @@ import Checkbox from "@mui/material/Checkbox";
 import { Modal } from "antd";
 
 import "./registration.scss";
+
+const schema = Joi.object({
+  firstName: Joi.string().required().label("First Name"),
+  lastName: Joi.string().required().label("Last Name"),
+  email: Joi.string()
+    .required()
+    .empty("")
+    .regex(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      "xxx@xx.xx",
+      ""
+    )
+    .label("Email"),
+  phone: Joi.string()
+    .required()
+    .regex(
+      /^(070)\d{7}$|^(071)\d{7}$|^(072)\d{7}$|^(074)\d{7}$|^(075)\d{7}$|^(076)\d{7}$|^(077)\d{7}$|^(078)\d{7}$/,
+      "07xxxxxxxx"
+    )
+    .label("Mobile Number"),
+  Avatar: Joi.string().empty("").label("Profile Picture"),
+  password: Joi.string().required().label("Password"),
+});
 
 const Registration = () => {
   const [isOtpPopup, setIsOtpPopup] = useState(false);
@@ -23,6 +48,9 @@ const Registration = () => {
   const handleCancel = () => {
     setIsOtpPopup(false);
   };
+
+  let userData = useSelector((state) => state.USERS);
+  console.log(userData);
   return (
     <div className="registration">
       <Modal
