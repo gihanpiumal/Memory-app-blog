@@ -1,11 +1,18 @@
-.home{
+.container {
+    position: relative;
+  .navbar {
+    width: 100%;
+  }
+  .home {
     display: flex;
-    .homeContainer{
-        flex: 4;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    margin-top: 20px;
+    .homeContainer {
+      flex: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .sideContainer{
+    .sideContainer {
     }
+  }
 }
